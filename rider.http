@@ -1,0 +1,22 @@
+### REGISTER
+POST http://localhost:3001/rider/signup
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
+### SIGNIN
+POST http://localhost:3001/rider/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
+### GETRIDERDETAIL
+GET http://localhost:3001/rider/dlkja567lkfjkdjl0000ee

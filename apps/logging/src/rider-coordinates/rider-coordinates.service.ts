@@ -25,6 +25,17 @@ export class RiderCoordinatesService {
       throw new Error(error)
     }
   }
+
+  async getAllRiderCoordinates() {
+    try {
+      const coordinates = await this.riderCoordinateModel.find().exec();
+      return { coordinates };
+    } catch (error) {
+      console.error(error);
+      throw new Error(error)
+    }
+  }
+  
   async saveRiderCoordinates(createCoordinateDto: CreateCoordinatesDto) {
     return await this.riderCoordinateModel.create(createCoordinateDto);
   }

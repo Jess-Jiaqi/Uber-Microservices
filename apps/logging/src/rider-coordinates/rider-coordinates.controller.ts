@@ -5,6 +5,12 @@ import { RiderCoordinatesService } from './rider-coordinates.service';
 @Controller('rider-coordinates')
 export class RiderCoordinatesController {
   constructor(private coordinatesService: RiderCoordinatesService) {}
+  
+  @Get()
+  async getAllRiderCoordinates() {
+    return this.coordinatesService.getAllRiderCoordinates();
+  }
+  
   @Get(':id')
   async getRiderCoordinates(
     @Param()
