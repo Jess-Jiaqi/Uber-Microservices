@@ -1,8 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Rider {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn('varchar', { length: 256 })
   id: string;
 
   @Column()

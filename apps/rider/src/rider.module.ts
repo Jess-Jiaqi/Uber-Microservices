@@ -12,7 +12,7 @@ import { Rider } from './entities/rider.entity';
       port: 5432,
       username: 'postgres',
       password: 'postgres',
-      database: 'uber',
+      database: 'rider_db',
       entities: [Rider],
       synchronize: true,
     }),

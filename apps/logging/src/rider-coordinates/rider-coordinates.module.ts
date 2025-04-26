@@ -14,7 +14,12 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       { name: RiderCoordinate.name, schema: RiderCoordinateSchema },
     ]),
     ClientsModule.register([
-      { name: 'RIDER_SERVICE', transport: Transport.TCP }
+      { name: 'RIDER_SERVICE', transport: Transport.TCP,
+        options: {
+          host: 'localhost',
+          port: 3001
+        }
+       }
     ])
   ],
   controllers: [RiderCoordinatesController],

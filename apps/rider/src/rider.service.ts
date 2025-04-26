@@ -21,12 +21,22 @@ export class RiderService {
       throw new ConflictException('Email already exists');
     }
     
+    // 手动设置一个固定的ID（开发阶段使用）
+    const riderId = 'rider_' + Date.now(); // 使用时间戳确保唯一性
+    
+    // 检查ID是否已存在
+    const existingId = await this.riderRepository.findOne({ where: { id: riderId } });
+    if (existingId) {
+      throw new ConflictException('ID already exists');
+    }
+    
     // Hash password
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt);
     
-    // Create new rider
+    // Create new rider with manual ID
     const rider = this.riderRepository.create({
+      id: riderId,
       ...signupDto,
       password: hashedPassword,
     });

@@ -19,4 +19,4 @@ Content-Type: application/json
 }
 
 ### GETRIDERDETAIL
-GET http://localhost:3001/rider/dlkja567lkfjkdjl0000ee
+GET http://localhost:3001/rider/rider_1745622064843

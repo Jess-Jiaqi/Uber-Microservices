@@ -1,0 +1,15 @@
+### GET SINGLE RIDER COORDINATES
+GET http://localhost:3002/rider-coordinates/rider_1745622064843
+
+### GET ALL COORDINATES
+GET http://localhost:3002/rider-coordinates
+
+### SAVE COORDINATES
+POST http://localhost:3002/rider-coordinates
+Content-Type: application/json
+
+{
+  "rider": "rider_1745622064843",
+  "latitude": 666.7128,
+  "longitude": 778.88
+}
